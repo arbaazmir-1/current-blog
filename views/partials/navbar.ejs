@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-light " style="margin: 0 auto; width: 90%; margin-top: 5px; border-radius: 10px;background-color: #ffffff70;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/home">neutron | current</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link"  href="/home/new">Create Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Settings</a>
+                </li>
+                
+            </ul>
+            <form action="/home/search" method="GET" class="d-flex needs-validation" novalidate> 
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search" required>
+                <button class="btn btn-info" type="submit">Search</button>
+            </form>
+            
+           <% if(!activeUser){ %> 
+            <ul class="navbar-nav ">
+                <li class="nav-item">
+                    <a class="btn btn-success ml-4" style="margin-left: 5px;" href="/home/login" tabindex="-1" aria-disabled="true">Login</a>
+                    <a class="btn btn-warning ml-4" style="margin-left: 5px;" href="/home/register" tabindex="-1"
+                        aria-disabled="true">Register</a>
+                </li>
+            </ul>
+            <% }else { %> 
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                        <a class="btn btn-success ml-4" style="margin-left: 5px;" href="/home/user/<%=activeUser._id%>" tabindex="-1"
+                            aria-disabled="true">Hi <%=activeUser.username%></a>
+                       
+                       
+                    </li>
+                </ul>
+            
+            <form action="/logout" method="GET" class="d-flex needs-validation" novalidate>
+                <button class="btn btn-danger" type="submit">Logout</button>
+            </form>
+           
+            <% } %> 
+            
+            
+        </div>
+    </div>
+</nav>

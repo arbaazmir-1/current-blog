@@ -1,0 +1,49 @@
+<% layout('layout/boilerplate') %>
+<div class="container mt-3">
+    <div class="col-6 offset-3 ">
+        <form action="/home" method="POST" novalidate class="needs-validation" enctype="multipart/form-data">
+            <div>
+            <label class="form-label" for="title">Title of Blog</label>
+            <input class="form-control" type="text" name="title" id="title" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Need a Title!
+            </div>
+            </div>
+
+            <div>
+
+            <input type="file" name="image" id="image" class="form-control mt-2 mb-2">
+            </div>
+
+            <!-- <div>
+            <label class="form-label" for="image">Image Link</label>
+            <input class="form-control" type="text" name="image" id="title" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Need an Image!
+            </div>
+            </div> -->
+            <div>
+            <label class="form-label" for="title">Enter Blog Content</label>
+            <textarea class="form-control" name="content" id="content" cols="30" rows="10" placeholder="Type Your blog here" required></textarea>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Need Some Content
+            </div>
+            </div>
+            <div class="col6 offset-5 mt-3">
+                <button class="btn btn-success">Upload</button>
+
+            </div>
+        </form>
+
+    </div>
+
+</div>

@@ -1,0 +1,32 @@
+<% layout('layout/boilerplate') %>
+    <div class="container" style="margin-top: 10px;">
+        <h2>Search Result for: <%=search%></h2>
+        <div class="row">
+            <% if(foundBlog==0){ %> 
+                <div class="alert alert-danger" role="alert">
+                    No Results Found!
+                </div>
+                <% }else{ %> 
+            <% for(post of foundBlog) { %>
+                <div class="col">
+                    <div class="card d-flex flex-column text-white mb-2" style="width: 18rem;">
+                        <img src="<%=post.image.url%>" class="card-img" style="height: 300px;width: auto;" alt="...">
+                        <div class="card-img-overlay align-self-end">
+                            <h5 style="text-shadow: 1px 1px 1px #00000050;" class="card-title">
+                                <%=post.title%>
+                            </h5>
+                            <p style="text-shadow: 0.5px 0.5px 0.5px #00000050;" class="card-text">
+                                <%=post.content.slice(0,105)%>...
+                            </p>
+                            <a href="/home/<%=post._id%>" class="btn btn-primary shadow">Continue Reading</a>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+                <% } %> 
+
+
+        </div>
+
+
+    </div>
